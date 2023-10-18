@@ -7,6 +7,7 @@ import AddProduct from "../Components/AddProduct/AddProduct";
 import Home from "../Components/Home/Home";
 import Productviews from "../Components/ProductViews/Productviews";
 import ProductDetails from "../Components/ProductViews/ProductDetails";
+import Login from "../Components/Login/Login";
 
 const Routes = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const Routes = createBrowserRouter([
         {
           path: "/addProduct",
           element:<AddProduct></AddProduct>,
+        },
+        {
+          path: "/login",
+          element:<Login></Login>,
         },
         {
           path: "/viewbrand/:brand",
