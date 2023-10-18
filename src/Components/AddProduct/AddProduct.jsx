@@ -1,10 +1,39 @@
-
+import Swal from 'sweetalert2'
 
 const AddProduct = () => {
     const handleaddproduct = e => {
         e.preventDefault();
         const form = e.target;
-        console.log(form.select.value)
+        const product_name = form.pro_name.value;
+        const BrandName = form.brandName.value;
+        const product_type = form.pro_type.value;
+        const product_price = form.price.value;
+        const product_rating = form.rating.value;
+        const product_description = form.description.value;
+        const product_photo = form.photo.value;
+        const newProduct = { product_name, BrandName, product_type, product_price, product_rating, product_description, product_photo }
+        console.log(newProduct);
+        fetch('http://localhost:5000/products',
+            {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                },
+                body: JSON.stringify(newProduct)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Product Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    })
+                }
+            })
+
     }
     return (
         <div>
@@ -32,9 +61,9 @@ const AddProduct = () => {
                                         <span className="label-text">Brand Name</span>
                                     </label>
                                     {/* <input type="text" name="pro_name" placeholder="Product Name" className="input input-bordered" required /> */}
-                                    <select className="select select-bordered" name="brand" required>
+                                    <select className="select select-bordered" name="brandName" defaultValue="Brand Name" required>
                                         <option disabled selected>Brand Name</option>
-                                        <option value="L'Oréal">L'Oréal</option>
+                                        <option value="BIELENDA">BIELENDA</option>
                                         <option value="Chanel">Chanel</option>
                                         <option value="Dior">Dior</option>
                                         <option value="Revlon">Revlon</option>
@@ -76,7 +105,7 @@ const AddProduct = () => {
                                     <label className="label">
                                         <span className="label-text">Rating</span>
                                     </label>
-                                    <input type="text" placeholder="rating" className="input input-bordered" required />
+                                    <input type="text" placeholder="Product Rating" name="rating" className="input input-bordered" required />
 
                                 </div>
                             </div>
@@ -96,7 +125,8 @@ const AddProduct = () => {
 
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn text-white text-xl" style={{backgroundImage: 'linear-gradient(to right, #f9a8d4, #e879f9)'}}>Add Your Product</button>
+                                <input className="btn text-white text-xl" style={{ backgroundImage: 'linear-gradient(to right, #f9a8d4, #e879f9)' }} type="submit" value="Add Your Product" />
+
                             </div>
                         </form>
                     </div>
