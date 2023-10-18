@@ -33,21 +33,11 @@ const Provider = ({ children }) => {
     useEffect(() => {
 
         const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
-            if (currentuser) {
 
-                const uid = currentuser.uid;
+            setuser(currentuser)
 
-                setuser(currentuser)
+            setloading(false)
 
-
-                setuser(currentuser)
-                console.log('user', uid)
-                setloading(false)
-            }
-            else {
-                console.log("User is signed out")
-                setloading(false)
-            }
         });
         return () => unsubscribe()
     }, [])

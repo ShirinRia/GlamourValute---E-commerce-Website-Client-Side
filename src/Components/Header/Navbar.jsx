@@ -1,7 +1,21 @@
-import {  NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from '../../assets/logo.png'
 import './Navbar.css'
+import { useContext } from "react";
+import { Authcontext } from '../../Provider/Provider';
 const Navbar = () => {
+    const { user, logout } = useContext(Authcontext)
+    console.log(user)
+    const handlelogout = () => {
+        logout()
+            .then(() => {
+                // Sign-out successful.
+
+            }).catch((error) => {
+                console.log(error.message)
+            });
+
+    }
     const links = <>
         <li className="mr-4"><NavLink to={'/'}>Home</NavLink></li>
         <li className="mr-4"><NavLink to={'/addProduct'}>Add Product</NavLink></li>
@@ -18,7 +32,7 @@ const Navbar = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                           {links}
+                            {links}
                         </ul>
                     </div>
                     <img src={logo} alt="logo" className="h-20" />
@@ -29,7 +43,17 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    {user ?
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 rounded-full">
+                                <img src={user.photoURL} className="w-full h-full rounded-full" />
+                            </div>
+                            <a onClick={handlelogout} href="/login" className="btn hover:text-white hover:bg-[#abce4e] ">Sign Out</a>
+                        </div>
+
+                        : <Link to={'/login'} className="btn bg-[#e879f9] text-white hover:text-[#abce4e] hover:bg-white hover:outline hover:outline-offset-0 hover:outline-[#abce4e]"> Get Started </Link>
+
+                    }
                 </div>
             </div>
         </div>
