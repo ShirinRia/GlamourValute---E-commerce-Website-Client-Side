@@ -38,8 +38,9 @@ const Routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/mycart",
+        path: "/mycart/:uid",
         element: <PrivateRoute><Mycart></Mycart></PrivateRoute>,
+        loader:({params})=>fetch(`http://localhost:5000/carts/${params.uid}`)
       },
       {
         path: "/viewbrand/:brand",

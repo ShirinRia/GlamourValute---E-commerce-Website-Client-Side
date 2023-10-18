@@ -9,6 +9,7 @@ const googleprovider = new GoogleAuthProvider();
 const auth = getAuth(app)
 const Provider = ({ children }) => {
     const [user, setuser] = useState(null)
+    const [uid, setuid] = useState(null)
     const [loading, setloading] = useState(true)
 
     const createuser = (email, password) => {
@@ -33,7 +34,7 @@ const Provider = ({ children }) => {
     useEffect(() => {
 
         const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
-
+            setuid(currentuser.uid)
             setuser(currentuser)
 
             setloading(false)
@@ -47,7 +48,8 @@ const Provider = ({ children }) => {
         logout,
         signin,
         signgoogle,
-        loading
+        loading,
+        uid
     }
     return (
         <Authcontext.Provider value={authinfo}>

@@ -4,14 +4,16 @@ import './Navbar.css'
 import { useContext } from "react";
 import { Authcontext } from '../../Provider/Provider';
 const Navbar = () => {
-    const { user, logout } = useContext(Authcontext)
-    console.log(user)
+    const { user, logout,uid } = useContext(Authcontext)
+    
+    console.log(uid)
     const handlelogout = () => {
         logout()
             .then(() => {
                 // Sign-out successful.
 
-            }).catch((error) => {
+            })
+            .catch((error) => {
                 console.log(error.message)
             });
 
@@ -19,7 +21,7 @@ const Navbar = () => {
     const links = <>
         <li className="mr-4"><NavLink to={'/'}>Home</NavLink></li>
         <li className="mr-4"><NavLink to={'/addProduct'}>Add Product</NavLink></li>
-        <li className="mr-4"><NavLink to={'/myCart'}>My Cart</NavLink></li>
+        <li className="mr-4"><NavLink to={`/mycart/${uid}`}>My Cart</NavLink></li>
 
     </>
     return (
@@ -47,6 +49,7 @@ const Navbar = () => {
                         <div className="flex items-center gap-3">
                             <div className="w-10 rounded-full">
                                 <img src={user.photoURL} className="w-full h-full rounded-full" />
+                               
                             </div>
                             <a onClick={handlelogout} href="/login" className="btn hover:text-white hover:bg-[#abce4e] ">Sign Out</a>
                         </div>
