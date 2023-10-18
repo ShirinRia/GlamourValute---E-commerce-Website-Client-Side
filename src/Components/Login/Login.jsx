@@ -1,6 +1,6 @@
-
 import { Link } from 'react-router-dom';
 import loginimage from '../../assets/elsa-olofsson-Pm0K9Y3EPUc-unsplash.jpg'
+
 const Login = () => {
     return (
         <div className='max-w-6xl mx-auto my-10 h-[80vh]'>
@@ -22,7 +22,7 @@ const Login = () => {
                             <div className='space-y-3'>
                                 <h1 className="text-3xl font-bold">Login now!</h1>
                                 <p>
-                                    Does not have an account? <Link className='text-[#86198f] underline'>Sign Up</Link>
+                                    Does not have an account? <Link to={'/register'} className='text-[#86198f] underline'>Sign Up</Link>
                                 </p>
 
                             </div>
@@ -41,7 +41,7 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
 
-                                <input className="btn text-white text-xl" style={{ backgroundImage: 'linear-gradient(to right, #f9a8d4, #e879f9)' }} type="submit" value="Login" />
+                                <input className="btn text-white text-xl" style={{ backgroundImage: 'linear-gradient(to right, #f9a8d4, #e879f9)' }} type="submit" value="Sign in" />
                             </div>
                         </form>
                     </div>
