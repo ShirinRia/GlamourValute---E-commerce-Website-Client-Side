@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "brand": "L'Oréal",
+      "image": "https://www.loreal.com/-/media/project/loreal/brand-sites/corp/master/lcorp/4-brands/consumer-products-division/nyx/loreal0283769.jpg?rev=257713e98d754086827f50c9c0216ef3&cx=0&cy=0&cw=330&ch=330&blr=False&hash=EF4404B9522A5D5366C4BA137D8ADCE0",
+      "desc":"L’Oréal has set itself the mission of offering all women and men worldwide the best of cosmetics innovation in terms of quality, efficacy and safety."
+    },
+    {
+      "id": 2,
+      "brand": "Chanel",
+      "image": "https://thumbs.dreamstime.com/b/coco-chanel-icons-set-items-isolated-over-white-editable-vector-eps-file-available-coco-chanel-paris-collection-different-194791462.jpg",
+      "desc":"Through multi-year, specialised support, CHANEL adapts global strategies to local realities, offering tailored resources, connecting critical channels and amplifying community-led solutions."
+    },
+    {
+      "id": 3,
+      "brand": "Dior",
+      "image": "https://www.dior.com/couture/var/dior/storage/images/horizon/beauty/beauty-home-components/block-cover-pcd-cover-1-chine/block-cover-item-00-cover-00-xmas-teasing/41873733-1-int-EN/00-cover-00-xmas-teasing_1440_1200.jpg",
+      "desc":"Thought up by Maria Grazia Chiuri, the minimalist silhouette of the Dior Book Tote lends itself to multiple metamorphoses.Objects of desire in chromatic nuances, to be discovered within a veritable dream library."
+    },
+    {
+      "id": 4,
+      "brand": "Revlon",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa2HLtrIn-MQVZ3TBqNkkXtdOnj9JZp2fW8g&usqp=CAU",
+      "desc":"Revlon, is an American multinational company dealing in cosmetics, skin care, perfume, and personal care. Revlon products are sold in 150 countries."
+    },
+    {
+      "id": 5,
+      "brand": "Avon",
+      "image": "https://lh3.googleusercontent.com/p/AF1QipPLXZ5gG-b_6iLt-wlo9YkstZmQhxYUVkP1b6_0=w1080-h608-p-no-v0",
+      "desc":"Shop Avon's top-rated beauty products online. Explore Avon's site full of your favorite products, including cosmetics, skin care, jewelry and fragrances"
+    },
+    {
+      "id": 6,
+      "brand": "Coty",
+      "image": "https://i0.wp.com/veganrabbit.com/wp-content/uploads/2019/06/coty-brands_.jpg?fit=1000%2C700&ssl=1",
+      "desc":"One of the world's largest beauty companies with an iconic portfolio of brands across fragrance, color cosmetics, hair color and styling. Home to 50+ iconic cosmetic, skincare and fragrance brands."
+    }
+  ]
+  
