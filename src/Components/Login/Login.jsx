@@ -12,7 +12,7 @@ const Login = () => {
             </div>
 
             <div >
-                <div className="flex flex-col lg:flex-row-reverse justify-between gap-10 py-10">
+                <div className="flex flex-col lg:flex-row-reverse justify-between items-center gap-10 py-10">
                     <div className="w-1/2">
                         <img src={loginimage} alt="loginimage" />
                     </div>
