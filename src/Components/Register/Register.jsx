@@ -22,14 +22,41 @@ const Register = () => {
 
         if (password.length < 6) {
             setregerror("password length less then 6")
+            Swal.fire({
+                title: `${regerror}` ,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            })
             return;
         }
         else if (!/[A-Z]/.test(password)) {
             setregerror("Password should have a capital letter")
+            Swal.fire({
+                title: `${regerror}`,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            })
             return;
         }
         else if (!/[!@#$%^&*()_+{}[\]:;<>,.?~\\|-]/.test(password)) {
             setregerror("Password should have a Special Character")
+            Swal.fire({
+                title: `${regerror}`,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            })
             return;
         }
         createuser(email, password)
@@ -37,8 +64,8 @@ const Register = () => {
 
                 const currentuser = userCredential.user;
                 console.log(currentuser)
-
-                // updateprofile(name,photo)
+                const createat = currentuser.metadata.creationTime
+                
                 updateProfile(currentuser, {
                     displayName: name,
 
@@ -46,14 +73,28 @@ const Register = () => {
                 })
                     .then(() => {
                         // Profile updated!
-                        Swal.fire({
-                            title: 'Success!',
-                            text: 'Registered with email Successfully',
-                            icon: 'success',
-                            confirmButtonText: 'OK'
-                        })
-                       
-
+                        const newuserdata = { name, email, photo, createdAt: createat }
+                        console.log(newuserdata);
+                        fetch('http://localhost:5000/users',
+                            {
+                                method: 'POST',
+                                headers: {
+                                    'content-type': 'application/json',
+                                },
+                                body: JSON.stringify(newuserdata)
+                            })
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log(data)
+                                if (data.insertedId) {
+                                    Swal.fire({
+                                        title: 'Success!',
+                                        text: 'Registered with email Successfully',
+                                        icon: 'success',
+                                        confirmButtonText: 'OK'
+                                    })
+                                }
+                            })
                         navigate("/");
 
                     })
