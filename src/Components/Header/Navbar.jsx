@@ -4,8 +4,8 @@ import './Navbar.css'
 import { useContext } from "react";
 import { Authcontext } from '../../Provider/Provider';
 const Navbar = () => {
-    const { user, logout,uid } = useContext(Authcontext)
-    
+    const { user, logout, uid } = useContext(Authcontext)
+
     console.log(uid)
     const handlelogout = () => {
         logout()
@@ -47,10 +47,16 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {user ?
                         <div className="flex items-center gap-3">
-                            <div className="w-10 rounded-full">
-                                <img src={user.photoURL} className="w-full h-full rounded-full" />
-                               
+                            <div className="flex gap-2 items-center border-2 border-base-200 px-3 py-1 rounded-lg">
+                                <div className="w-10 rounded-full">
+                                    <img src={user.photoURL} className="w-full h-full rounded-full" />
+
+                                </div>
+                                <div>
+                                    <p>{user.displayName}</p>
+                                </div>
                             </div>
+
                             <a onClick={handlelogout} href="/login" className="btn hover:text-white hover:bg-[#abce4e] ">Sign Out</a>
                         </div>
 

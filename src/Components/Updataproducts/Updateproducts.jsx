@@ -145,7 +145,7 @@ const Updateproducts = () => {
 
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn text-white text-xl" style={{ backgroundImage: 'linear-gradient(to right, #f9a8d4, #e879f9)' }} type="submit" value="Add Your Product" />
+                                <input className="btn text-white text-xl" style={{ backgroundImage: 'linear-gradient(to right, #f9a8d4, #e879f9)' }} type="submit" value="Update Your Product" />
 
                             </div>
                         </form>
