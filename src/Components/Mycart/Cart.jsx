@@ -37,18 +37,20 @@ const Cart = ({ loadedcart, carts, setcarts }) => {
     return (
         <div>
             <div className="md:flex bg-base-200 mb-8 ">
-                <div>
+                <div className='flex-grow flex gap-10'>
                     <figure className='rounded-lg h-[150px]'><img className=' h-[150px] w-[150px] rounded-l-lg' src={product_photo} alt="brand" /></figure>
-                </div>
-
-                <div className=" w-1/2 p-5">
-                    <div className="flex justify-between">
+                    <div className="flex flex-col space-y-3 py-5">
                         <h2 className="text-3xl">{product_name}</h2>
+                        <p>{product_type}</p>
                         <p>TK {product_price}</p>
                     </div>
+                </div>
+                
+                <div className="p-5">
+                    
                     <div className='flex justify-between'>
-                        <p>{product_type}</p>
-                        <button onClick={() => cartDelete(_id)}><RiDeleteBin6Fill /></button>
+                       
+                        <button onClick={() => cartDelete(_id)}><RiDeleteBin6Fill className='text-3xl' /></button>
                     </div>
 
                 </div>

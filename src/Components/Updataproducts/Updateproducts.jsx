@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 
 const Updateproducts = () => {
     const loadedproducts = useLoaderData()
-    const  { _id,product_photo, product_description, product_rating, product_type, product_name, BrandName, product_price } =loadedproducts
+    const  { _id,product_photo, product_description, product_rating, product_type, product_name, BrandName, product_price, product_amount } =loadedproducts
     const handleupdateproduct = e => {
         e.preventDefault();
         const form = e.target;
@@ -125,7 +125,7 @@ const Updateproducts = () => {
                                     <label className="label">
                                         <span className="label-text">Amount</span>
                                     </label>
-                                    <input type="text" placeholder="Product Amount" name="amount" className="input input-bordered" />
+                                    <input type="text" placeholder="Product Amount" defaultValue={product_amount} name="amount" className="input input-bordered" />
 
                                 </div>
                             </div>

@@ -30,6 +30,14 @@ const ProductDetails = () => {
                         confirmButtonText: 'OK'
                     })
                 }
+                else{
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'item already added to your cart',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    })
+                }
             })
     }
     // console.log(productdetails)
