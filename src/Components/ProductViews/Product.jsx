@@ -29,8 +29,9 @@ const Product = ({ product }) => {
 
                     <div className="flex justify-center gap-x-5 px-5">
                         <Link to={`/productdetails/${BrandName}/${_id}`} className="btn bg-[#f9a8d4] w-1/2">Details</Link>
+                        <Link to={`/updateproduct/${BrandName}/${_id}`}  className="btn bg-[#e879f9] w-1/2">Update</Link>
                         
-                        <button className="btn bg-[#e879f9] w-1/2">Update</button>
+                        {/* <button className="btn bg-[#e879f9] w-1/2">Update</button> */}
                     </div>
                     <div className="card-actions justify-end">
                         <div className=" italic font-bold text-xl">{BrandName}</div>
