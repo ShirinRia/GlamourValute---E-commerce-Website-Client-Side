@@ -1,0 +1,34 @@
+
+[
+    {
+      "id": 1,
+      "title": "Best Price Guaranteed",
+      "amount": "https://i.ibb.co/2k7SDB2/best-seller.png"
+    },
+    {
+      "id": 2,
+      "title": "On time delivery",
+      "amount": "https://i.ibb.co/V3nBQs9/delivery-schedule.png"
+    },
+    {
+      "id": 3,
+      "title": "Authentic Products",
+      "amount": "https://i.ibb.co/d0Mc9D8/authentic.png"
+    },
+    {
+      "id": 4,
+      "title": "Free & Easy Returns",
+      "amount": "https://i.ibb.co/ZdspkpJ/free-shipping.png"
+    },
+    {
+      "id": 5,
+      "title": "Safe Payments",
+      "amount": "https://i.ibb.co/Mcb2DXx/credit-card.png"
+    },
+    {
+      "id": 6,
+      "title": "Exclusive brands",
+      "amount": "https://i.ibb.co/zf3kfwx/brand-image.png"
+    }
+  ]
+  

@@ -5,7 +5,7 @@ import Navbar from "../Header/Navbar";
 
 const Root = () => {
     return (
-        <div className="font-display">
+        <div className="font-display ">
             <Navbar></Navbar>
            <Outlet></Outlet>
            <Footer></Footer>

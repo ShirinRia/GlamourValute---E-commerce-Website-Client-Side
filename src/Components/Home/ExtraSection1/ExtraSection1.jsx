@@ -22,9 +22,8 @@ const ExtraSection1 = () => {
                     {
                         reviews.map((review) =>
 
-                            <Reviews key={review.id}
+                            <Reviews key={review._id}
                                 reviewdata={review}>
-
                             </Reviews>
                         )
                     }

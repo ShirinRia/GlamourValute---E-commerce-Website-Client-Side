@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types'; // ES6
 
 const Reviews = ({ reviewdata }) => {
     const { userName, review } = reviewdata
@@ -15,5 +15,7 @@ const Reviews = ({ reviewdata }) => {
         </div>
     );
 };
-
+Reviews.propTypes = {
+    reviewdata: PropTypes.object,
+};
 export default Reviews;

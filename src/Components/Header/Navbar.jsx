@@ -22,11 +22,12 @@ const Navbar = () => {
         <li className="mr-4"><NavLink to={'/'}>Home</NavLink></li>
         <li className="mr-4"><NavLink to={'/addProduct'}>Add Product</NavLink></li>
         <li className="mr-4"><NavLink to={`/mycart/${uid}`}>My Cart</NavLink></li>
+        <li className="mr-4"><NavLink to={`/advertise`}>Create an Advertise</NavLink></li>
 
     </>
     return (
         <div className="max-w-6xl mx-auto">
-            <div className="navbar bg-base-100">
+            <div className="navbar ">
 
                 <div className="navbar-start">
                     <div className="dropdown">
