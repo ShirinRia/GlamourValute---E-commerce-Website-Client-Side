@@ -5,9 +5,10 @@ import { Authcontext } from '../../Provider/Provider';
 import Swal from 'sweetalert2'
 const ProductDetails = () => {
 
+
     const productdetails = useLoaderData()
     const { user } = useContext(Authcontext)
-    const cartitem =productdetails
+    const cartitem = productdetails
     cartitem['UserUid'] = user.uid;
     console.log(cartitem)
     const addtoCart = () => {
@@ -30,7 +31,7 @@ const ProductDetails = () => {
                         confirmButtonText: 'OK'
                     })
                 }
-                else{
+                else {
                     Swal.fire({
                         title: 'Error!',
                         text: 'item already added to your cart',
@@ -40,6 +41,38 @@ const ProductDetails = () => {
                 }
             })
     }
+
+    const handlereviewform = e => {
+        e.preventDefault();
+        const userName = user.displayName;
+        const productName = productdetails.product_name;
+        const form = e.target;
+        const review = form.review.value;
+        console.log(userName, review)
+        const newReview = { userName, review, productName }
+        fetch('http://localhost:5000/reviews',
+            {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                },
+                body: JSON.stringify(newReview)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'You have reviewed this product',
+                        icon: 'success',
+                        confirmButtonText: 'Congratulation'
+                    })
+                }
+            })
+
+    }
+
     // console.log(productdetails)
     return (
         <div className="max-w-6xl mx-auto my-10">
@@ -59,6 +92,21 @@ const ProductDetails = () => {
 
                     </div>
                 </div>
+            </div>
+            <div>
+                <form onSubmit={handlereviewform}>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text text-xl">Write Review</span>
+                        </label>
+                        <textarea name="review" placeholder="Write Product Review" className="textarea textarea-bordered textarea-lg w-full " ></textarea>
+
+                    </div>
+                    <div className="form-control mt-6">
+
+                        <input className="btn text-white text-xl" style={{ backgroundImage: 'linear-gradient(to right, #f9a8d4, #e879f9)' }} type="submit" value="Review" />
+                    </div>
+                </form>
             </div>
         </div>
     );
