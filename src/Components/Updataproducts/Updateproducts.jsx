@@ -50,7 +50,7 @@ const Updateproducts = () => {
     }
 
     return (
-        <div >
+        <div>
             <div className="min-h-screen bg-base-200 my-10 max-w-6xl mx-auto px-10 py-10">
                 <div className="text-center ">
                     <h1 className="text-3xl md:text-5xl font-bold">Update Existing Product!</h1>

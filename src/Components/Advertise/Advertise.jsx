@@ -35,7 +35,7 @@ const Advertise = () => {
 
     }
     return (
-        <div>
+        <div className='max-w-6xl mx-auto h-[60vh] my-auto'>
             <div className="card  w-full  bg-base-100">
                 <form className="card-body" onSubmit={handleadvertise}>
                     <div className="flex justify-between gap-8">
