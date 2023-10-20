@@ -5,7 +5,7 @@ import ExtraSection1 from './ExtraSection1/ExtraSection1';
 import Extrasection2 from './Extrasection2/Extrasection2';
 
 const Home = () => {
-    const loadedbrands=useLoaderData()
+    const loadedbrands = useLoaderData()
     return (
         <div>
             <Banner></Banner>

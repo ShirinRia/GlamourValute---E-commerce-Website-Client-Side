@@ -53,27 +53,27 @@ const Updateproducts = () => {
         <div >
             <div className="min-h-screen bg-base-200 my-10 max-w-6xl mx-auto px-10 py-10">
                 <div className="text-center ">
-                    <h1 className="text-5xl font-bold">Update Existing Product!</h1>
+                    <h1 className="text-3xl md:text-5xl font-bold">Update Existing Product!</h1>
                     <p className="py-6">Introducing the newest additions to our cosmetic collection, designed to enhance your natural radiance and empower your inner glow. Beauty awaits!</p>
                 </div>
                 <div className="text-center ">
 
                     <div className="card  w-full   bg-base-100">
                         <form className="card-body" onSubmit={handleupdateproduct}>
-                            <div className="flex justify-between gap-8">
+                            <div className="flex flex-col md:flex-row justify-between gap-2 md:gap-8">
 
 
-                                <div className="form-control w-1/3">
+                                <div className="form-control w-full md:w-1/3">
                                     <label className="label">
                                         <span className="label-text">Product Name</span>
                                     </label>
                                     <input type="text" placeholder="Product Name" defaultValue={product_name} name="pro_name" className="input input-bordered" required />
                                 </div>
-                                <div className="form-control w-1/3">
+                                <div className="form-control w-full md:w-1/3">
                                     <label className="label">
                                         <span className="label-text">Brand Name</span>
                                     </label>
-                                    {/* <input type="text" name="pro_name" placeholder="Product Name" className="input input-bordered" required /> */}
+                                    
                                     <select className="select select-bordered" name="brandName" defaultValue={BrandName} required>
                                         <option disabled selected>Brand Name</option>
                                         <option value="BIELENDA">BIELENDA</option>
@@ -85,7 +85,7 @@ const Updateproducts = () => {
                                     </select>
                                 </div>
 
-                                <div className="form-control w-1/3">
+                                <div className="form-control w-full md:w-1/3">
                                     <label className="label">
                                         <span className="label-text">Type</span>
                                     </label>
@@ -93,8 +93,8 @@ const Updateproducts = () => {
                                 </div>
                             </div>
                             {/* second row: bdt, rating */}
-                            <div className="flex justify-between gap-8">
-                                <div className="w-1/3">
+                            <div className="flex flex-col md:flex-row justify-between gap-8">
+                                <div className="w-full md:w-1/3">
                                     <label className="label">
                                         <span className="label-text">Price</span>
                                     </label>
@@ -102,7 +102,7 @@ const Updateproducts = () => {
 
                                         <div className=" w-full">
                                             <div>
-                                                <input className="input input-bordered join-item w-full" name="price" defaultValue={product_price} placeholder="Price" />
+                                                <input className="input input-bordered join-item w-full" name="price" defaultValue={product_price} placeholder="Price"/>
                                             </div>
                                         </div>
 
@@ -114,14 +114,14 @@ const Updateproducts = () => {
                                 </div>
 
 
-                                <div className="form-control w-1/3">
+                                <div className="form-control w-full md:w-1/3">
                                     <label className="label">
                                         <span className="label-text">Rating</span>
                                     </label>
                                     <input type="text" placeholder="Product Rating" defaultValue={product_rating} name="rating" className="input input-bordered" required />
 
                                 </div>
-                                <div className="form-control w-1/3">
+                                <div className="form-control w-full md:w-1/3">
                                     <label className="label">
                                         <span className="label-text">Amount</span>
                                     </label>

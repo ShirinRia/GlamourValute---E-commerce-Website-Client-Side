@@ -6,7 +6,7 @@ const Brand = ({ loadedbrand }) => {
     return (
         <div>
             <Link to={`/viewbrand/${brand}`}>
-                <div className="card md:card-side bg-base-100 mb-8 shadow-md">
+                <div className="card card-side bg-base-100 mb-8 shadow-md">
                     <div className='w-1/2  '>
                         <figure className='w-full rounded-lg '><img className='h-[150px] rounded-l-lg' src={image} alt="brand" /></figure>
                     </div>

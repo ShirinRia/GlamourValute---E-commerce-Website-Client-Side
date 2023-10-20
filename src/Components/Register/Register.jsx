@@ -1,12 +1,12 @@
 import regimage from '../../assets/johanne-pold-jacobsen-XYkc3MfT7b4-unsplash.jpg'
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { updateProfile } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { Authcontext } from '../../Provider/Provider';
 import { FcGoogle } from 'react-icons/fc';
 const Register = () => {
-    const [regerror, setregerror] = useState('')
+    // const [regerror, setregerror] = useState('')
     const { createuser, signgoogle } = useContext(Authcontext)
     const navigate = useNavigate();
     const handleRegister = e => {
@@ -19,10 +19,10 @@ const Register = () => {
         if (!photo) {
             photo = "https://i.ibb.co/0jQwXPz/download.jpg"
         }
-        setregerror('')
+        // setregerror('')
 
         if (password.length < 6) {
-            setregerror("password length less then 6")
+            // setregerror("password length less then 6")
             Swal.fire({
                 title: `password length less then 6`,
                 showClass: {
@@ -35,7 +35,7 @@ const Register = () => {
             return;
         }
         else if (!/[A-Z]/.test(password)) {
-            setregerror("Password should have a capital letter")
+            // setregerror("Password should have a capital letter")
             Swal.fire({
                 title: `Password should have a capital letter`,
                 showClass: {
@@ -48,7 +48,7 @@ const Register = () => {
             return;
         }
         else if (!/[!@#$%^&*()_+{}[\]:;<>,.?~\\|-]/.test(password)) {
-            setregerror("Password should have a Special Character")
+            // setregerror("Password should have a Special Character")
             Swal.fire({
                 title: `Password should have a Special Character`,
                 showClass: {
@@ -101,7 +101,16 @@ const Register = () => {
                     })
                     .catch((error) => {
 
-                        setregerror(error.message);
+                        // setregerror(error.message);
+                        Swal.fire({
+                            title: `${error.message}`,
+                            showClass: {
+                                popup: 'animate__animated animate__fadeInDown'
+                            },
+                            hideClass: {
+                                popup: 'animate__animated animate__fadeOutUp'
+                            }
+                        })
                     });
 
             })
@@ -157,7 +166,7 @@ const Register = () => {
 
     }
     return (
-        <div className='max-w-6xl mx-auto my-10 h-[100vh]'>
+        <div className='max-w-6xl mx-5 md:mx-auto mt-10 h-[100vh] mb-64'>
             <div className='text-center'>
                 <h2 className="text-2xl font-medium text-center mb-3">
                     New Customer
@@ -166,11 +175,11 @@ const Register = () => {
             </div>
 
             <div >
-                <div className="flex flex-col lg:flex-row-reverse justify-between items-center gap-10 py-10">
-                    <div className="w-1/2">
+                <div className="flex flex-col lg:flex-row-reverse justify-between items-center gap-20 md:gap-10 py-10 ">
+                    <div className="w-full md:w-1/2">
                         <img src={regimage} alt="regimage" className='w-[550px] h-[500px]' />
                     </div>
-                    <div className="card w-1/2 ">
+                    <div className="card w-full md:w-1/2 ">
                         <div className='w-full shadow-md bg-base-100 mx-auto'>
                             <form onSubmit={handleRegister} className="card-body ">
                                 <div className='space-y-3'>

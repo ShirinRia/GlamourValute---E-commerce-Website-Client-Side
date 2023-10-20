@@ -13,11 +13,11 @@ const Errorpage = () => {
           404
         </h3>
         <div className="hero-overlay bg-white bg-opacity-80"></div>
-        <div className="text-left text-neutral-content">
+        <div className="text-left text-neutral-content ">
 
-          <div className="flex w-full max-w-7xl  gap-10">
+          <div className="flex flex-col md:flex-row w-full max-w-7xl gap-96 md:gap-10 mt-80 md:mt-auto">
 
-            <div className='flex-grow '>
+            <div className='flex-grow text-center md:text-left space-y-14'>
               <h1 className="mb-5 text-7xl font-bold text-red-500" >
 
                 <TypeAnimation
@@ -32,7 +32,7 @@ const Errorpage = () => {
                   style={{ fontSize: '5rem', display: 'inline-block' }}
                   repeat={Infinity}
                 /></h1>
-              <p className="mb-5 text-2xl font-medium text-slate-800 ">We looked everywhere for this page. <br></br> Are you sure the URL is correct? </p>
+              <p className="mb-5 text-3xl md:text-2xl font-medium text-slate-800 ">We looked everywhere for this page. <br></br> Are you sure the URL is correct? </p>
 
             </div>
 
@@ -54,7 +54,7 @@ const Errorpage = () => {
 
           </div>
           <div className='text-center mt-8'>
-            <button className="btn bg-red-700 border-none text-xl text-white font-medium">Back to Home</button>
+            <button className="btn w-full md:w-auto bg-red-700 border-none text-xl text-white font-medium">Back to Home</button>
           </div>
 
 

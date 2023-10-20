@@ -2,11 +2,11 @@ import loginimage from '../../assets/elsa-olofsson-Pm0K9Y3EPUc-unsplash.jpg'
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { Authcontext } from '../../Provider/Provider';
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
-    const [logerror, setlogerror] = useState('')
+    // const [logerror, setlogerror] = useState('')
     const { signin, signgoogle } = useContext(Authcontext)
     const navigate = useNavigate()
     const location = useLocation()
@@ -15,7 +15,7 @@ const Login = () => {
         const logform = new FormData(e.currentTarget)
         const email = logform.get('email')
         const password = logform.get('password')
-        setlogerror('')
+        // setlogerror('')
 
         signin(email, password)
             .then((userCredential) => {
@@ -56,7 +56,7 @@ const Login = () => {
                 const errorMessage = error.message;
 
                 if (errorMessage === "Firebase: Error (auth/invalid-login-credentials).")
-                    setlogerror("Invalid Credential");
+                    // setlogerror("Invalid Credential");
                 Swal.fire({
                     title: "Invalid Credential",
                     showClass: {
@@ -109,7 +109,7 @@ const Login = () => {
 
     }
     return (
-        <div className='max-w-6xl mx-auto my-10 h-[100vh]'>
+        <div className='max-w-6xl mx-5 md:mx-auto my-10 h-[100vh]'>
             <div className='text-center'>
                 <h2 className="text-2xl font-medium text-center mb-3">
                     Customer Login
@@ -118,12 +118,12 @@ const Login = () => {
             </div>
 
             <div >
-                <div className="flex flex-col lg:flex-row-reverse justify-between items-center gap-10 py-10">
-                    <div className="w-1/2">
+                <div className="flex flex-col lg:flex-row-reverse justify-between items-center gap-20 md:gap-10 py-10">
+                    <div className="w-full md:w-1/2">
                         <img src={loginimage} alt="loginimage" />
                     </div>
-                    <div className="card w-1/2 ">
-                        <div className='w-2/3 shadow-md bg-base-100 mx-auto'>
+                    <div className="card w-full md:w-1/2 ">
+                        <div className='w-full md:w-2/3 shadow-md bg-base-100 mx-auto'>
                             <form onSubmit={handleloginform} className="card-body ">
                                 <div className='space-y-3'>
                                     <h1 className="text-3xl font-bold">Login now!</h1>
@@ -153,7 +153,7 @@ const Login = () => {
                             </form>
                             <hr className="my-5 mx-8"></hr>
                             <div>
-                                <p className='text-center'>Or Sign In with</p>
+                                <p className='text-center'>Or</p>
                                 <div className="my-5 mx-8">
                                     <button onClick={handlegoogle} className="btn w-full text-[#e879f9] text-lg bg-white outline outline-[#e879f9]"><FcGoogle className="text-2xl"> </FcGoogle>Sign In With Google</button>
                                 </div>

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'; // ES6
 import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
-    const { _id,product_photo, product_description, product_rating, product_type, product_name, BrandName, product_price } = product
+    const { _id, product_photo, product_description, product_rating, product_type, product_name, BrandName, product_price } = product
     return (
         <div>
             <div className="card card-compact md:w-96 bg-base-100 border-b-2 border-red-500">
@@ -29,8 +29,8 @@ const Product = ({ product }) => {
 
                     <div className="flex justify-center gap-x-5 px-5">
                         <Link to={`/productdetails/${BrandName}/${_id}`} className="btn bg-[#f9a8d4] w-1/2">Details</Link>
-                        <Link to={`/updateproduct/${BrandName}/${_id}`}  className="btn bg-[#e879f9] w-1/2">Update</Link>
-                        
+                        <Link to={`/updateproduct/${BrandName}/${_id}`} className="btn bg-[#e879f9] w-1/2">Update</Link>
+
                         {/* <button className="btn bg-[#e879f9] w-1/2">Update</button> */}
                     </div>
                     <div className="card-actions justify-end">

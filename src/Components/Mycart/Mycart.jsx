@@ -14,7 +14,7 @@ const Mycart = () => {
             </h3>
 
             <div >
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 mx-8 md:mx-auto'>
                     {carts.map(cart => <Cart key={cart._id} loadedcart={cart} carts={carts} setcarts={setcarts}></Cart>)}
 
                 </div>

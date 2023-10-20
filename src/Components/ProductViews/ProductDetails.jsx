@@ -75,11 +75,11 @@ const ProductDetails = () => {
 
     // console.log(productdetails)
     return (
-        <div className="max-w-6xl mx-auto my-10">
+        <div className="max-w-6xl mx-5 md:mx-auto  my-10">
             <div className="min-h-screen ">
                 <div className="flex flex-col lg:flex-row justify-between ">
                     <img src={productdetails.product_photo} className="h-full rounded-lg" />
-                    <div className="w-1/2 space-y-7">
+                    <div className="w-full md:w-1/2 space-y-7">
                         <h1 className="text-7xl ">{productdetails.product_name}</h1>
                         <hr></hr>
                         <p className="text-xl"><span className="text-[#db2777]">Amount: </span>{productdetails.product_amount}</p>

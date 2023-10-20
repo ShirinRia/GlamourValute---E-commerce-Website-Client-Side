@@ -10,10 +10,10 @@ const Footer = () => {
                     </header>
                     <p className='text-xl max-w-sm'>Your go-to destination for a personalized, transformative journey to unleash your inner glamour and confidence.</p>
                 </nav>
-                <div className='flex'>
-                    <div className='h-20 border-l-8 border-neutral my-auto'></div>
-                    <div className='h-40 border-l-8 border-neutral my-auto'></div>
-                    <div className='h-20 border-l-8 border-neutral my-auto'></div>
+                <div className='flex flex-col md:flex-row'>
+                    <div className='w-20 md:w-0 md:h-20 border-t-8 md:border-t-0 md:border-l-8 border-neutral mx-auto md:my-auto'></div>
+                    <div className='w-40 md:w-0 md:h-40 border-t-8 md:border-t-0 md:border-l-8 border-neutral mx-auto md:my-auto'></div>
+                    <div className='w-20 md:w-0 md:h-20 border-t-8 md:border-t-0 md:border-l-8 border-neutral mx-auto md:my-auto'></div>
                 </div>
 
                 <nav>

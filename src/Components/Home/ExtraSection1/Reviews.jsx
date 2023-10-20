@@ -8,7 +8,6 @@ const Reviews = ({ reviewdata }) => {
                 <div className="card-body">
                     <h2 className="card-title">{userName}</h2>
                     <p className="text-justify">{review}</p>
-
                 </div>
             </div>
 

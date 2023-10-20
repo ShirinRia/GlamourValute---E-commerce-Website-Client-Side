@@ -11,9 +11,9 @@ const ExtraSection1 = () => {
     }, [])
     return (
         <div>
-            <div className="max-w-6xl mx-auto border-t-2 border-b-2 border-base-500 mb-8 py-8">
+            <div className="max-w-6xl md:mx-auto mx-5 border-t-2 border-b-2 border-base-500 mb-8 py-8">
 
-                <h3 className='text-3xl md:text-5xl font-bold text-center  '>
+                <h3 className='text-3xl md:text-5xl font-bold text-center'>
                     Customer Reviews
                 </h3>
             </div>

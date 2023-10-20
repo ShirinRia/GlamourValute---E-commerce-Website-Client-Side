@@ -2,7 +2,8 @@ import { RiDeleteBin6Fill } from 'react-icons/ri';
 import Swal from 'sweetalert2'
 import PropTypes from 'prop-types'; // ES6
 const Cart = ({ loadedcart, carts, setcarts }) => {
-    const { _id, product_photo, product_rating, product_type, product_name, BrandName, product_price } = loadedcart
+    const { _id, product_photo, product_type, product_name, BrandName, product_price } = loadedcart
+    console.log(typeof (setcarts))
     const cartDelete = (id_) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -36,29 +37,34 @@ const Cart = ({ loadedcart, carts, setcarts }) => {
     }
     return (
         <div>
-            <div className="md:flex bg-base-200 mb-8 ">
-                <div className='flex-grow flex gap-10'>
-                    <figure className='rounded-lg h-[150px]'><img className=' h-[150px] w-[150px] rounded-l-lg' src={product_photo} alt="brand" /></figure>
-                    <div className="flex flex-col space-y-3 py-5">
-                        <h2 className="text-3xl">{product_name}</h2>
-                        <p>{product_type}</p>
-                        <p>TK {product_price}</p>
+            <div className="flex flex-col md:flex-row bg-base-200 mb-8 ">
+                <div className='flex-grow flex flex-col md:flex-row gap-10 items-center'>
+                    <figure className='rounded-lg h-full w-full md:w-1/3 md:h-[150px]'><img className='h-full md:h-[150px] w-full md:w-[150px] rounded-l-lg' src={product_photo} alt="brand" /></figure>
+                    <div className="flex flex-col w-full md:w-2/3 space-y-3 md:py-5">
+                        <h2 className="text-5xl md:text-2xl text-center md:text-left">{product_name}</h2>
+                        <p className="text-3xl md:text-lg text-center md:text-left">{product_type}</p>
+                        <p className="text-3xl md:text-lg text-center md:text-left">TK {product_price}</p>
+                        <p className=" italic font-bold text-xl text-center md:text-left">{BrandName}</p>
                     </div>
                 </div>
-                
+
                 <div className="p-5">
-                    
-                    <div className='flex justify-between'>
-                       
-                        <button onClick={() => cartDelete(_id)}><RiDeleteBin6Fill className='text-3xl' /></button>
+
+                    <div className='flex justify-center items-center'>
+
+                        <button onClick={() => cartDelete(_id)}><RiDeleteBin6Fill className='text-7xl md:text-5xl' /></button>
                     </div>
 
                 </div>
+                
             </div>
+            
         </div>
     );
 };
 Cart.propTypes = {
     loadedcart: PropTypes.object,
+    carts: PropTypes.array,
+    setcarts: PropTypes.func
 };
 export default Cart;

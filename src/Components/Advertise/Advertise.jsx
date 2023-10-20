@@ -35,10 +35,10 @@ const Advertise = () => {
     }
     return (
         <div>
-             <div className="card  w-full   bg-base-100">
+             <div className="card  w-full  bg-base-100">
                         <form className="card-body" onSubmit={handleadvertise}>
                             <div className="flex justify-between gap-8">
-                                <div className="form-control w-1/3">
+                                <div className="form-control w-full md:w-1/3">
                                     <label className="label">
                                         <span className="label-text">Brand Name</span>
                                     </label>

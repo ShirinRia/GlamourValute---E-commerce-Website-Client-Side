@@ -27,9 +27,9 @@ const Navbar = () => {
     </>
     return (
         <div className="max-w-6xl mx-auto">
-            <div className="navbar ">
+            <div className="navbar flex-col md:flex-row">
 
-                <div className="navbar-start">
+                <div className="navbar-start w-full md:w-1/2">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -45,10 +45,10 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="md:navbar-end my-5 md:my-0">
                     {user ?
-                        <div className="flex items-center gap-3">
-                            <div className="flex gap-2 items-center border-2 border-base-200 px-3 py-1 rounded-lg">
+                        <div className="flex items-center gap-3 ">
+                            <div className="flex gap-2 items-center border-2 border-base-200 px-3 py-1 rounded-lg mr-28 md:mr-0">
                                 <div className="w-10 rounded-full">
                                     <img src={user.photoURL} className="w-full h-full rounded-full" />
 
@@ -58,10 +58,10 @@ const Navbar = () => {
                                 </div>
                             </div>
 
-                            <a onClick={handlelogout} href="/login" className="btn hover:text-white hover:bg-[#abce4e] ">Sign Out</a>
+                            <a onClick={handlelogout} href="/login" className="btn hover:text-white hover:bg-[#e879f9] ">Sign Out</a>
                         </div>
 
-                        : <Link to={'/login'} className="btn bg-[#e879f9] text-white hover:text-[#abce4e] hover:bg-white hover:outline hover:outline-offset-0 hover:outline-[#abce4e]"> Get Started </Link>
+                        : <Link to={'/login'} className="btn bg-[#e879f9] text-white hover:text-[#e879f9] hover:bg-white hover:outline hover:outline-offset-0 hover:outline-[#e879f9]"> Get Started </Link>
 
                     }
                 </div>

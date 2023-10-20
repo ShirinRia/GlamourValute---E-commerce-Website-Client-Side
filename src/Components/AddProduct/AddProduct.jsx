@@ -41,23 +41,23 @@ const AddProduct = () => {
 
             <div className="min-h-screen bg-base-200 my-10 max-w-6xl mx-auto px-10 py-10">
                 <div className="text-center ">
-                    <h1 className="text-5xl font-bold">Add New Product!</h1>
+                    <h1 className="text-3xl md:text-5xl font-bold">Add New Product!</h1>
                     <p className="py-6">Unlock the beauty of tomorrow by adding a touch of fabulousness today. Introducing our latest cosmetic masterpiece to elevate your glam game!</p>
                 </div>
                 <div className="text-center ">
 
-                    <div className="card  w-full   bg-base-100">
+                    <div className="card  w-full bg-base-100">
                         <form className="card-body" onSubmit={handleaddproduct}>
-                            <div className="flex justify-between gap-8">
+                            <div className="flex flex-col md:flex-row justify-between gap-2 md:gap-8">
 
 
-                                <div className="form-control w-1/3">
+                                <div className="form-control w-full md:w-1/3">
                                     <label className="label">
                                         <span className="label-text">Product Name</span>
                                     </label>
                                     <input type="text" placeholder="Product Name" name="pro_name" className="input input-bordered" required />
                                 </div>
-                                <div className="form-control w-1/3">
+                                <div className="form-control w-full md:w-1/3">
                                     <label className="label">
                                         <span className="label-text">Brand Name</span>
                                     </label>
@@ -73,7 +73,7 @@ const AddProduct = () => {
                                     </select>
                                 </div>
 
-                                <div className="form-control w-1/3">
+                                <div className="form-control w-full md:w-1/3">
                                     <label className="label">
                                         <span className="label-text">Type</span>
                                     </label>
@@ -81,8 +81,8 @@ const AddProduct = () => {
                                 </div>
                             </div>
                             {/* second row: bdt, rating */}
-                            <div className="flex justify-between gap-8">
-                                <div className="w-1/3">
+                            <div className="flex flex-col md:flex-row justify-between gap-8">
+                                <div className="w-full md:w-1/3">
                                     <label className="label">
                                         <span className="label-text">Price</span>
                                     </label>
@@ -102,7 +102,7 @@ const AddProduct = () => {
                                 </div>
 
 
-                                <div className="form-control w-1/3">
+                                <div className="form-control w-full md:w-1/3">
                                     <label className="label">
                                         <span className="label-text">Rating</span>
                                     </label>
@@ -110,7 +110,7 @@ const AddProduct = () => {
 
                                 </div>
 
-                                <div className="form-control w-1/3">
+                                <div className="form-control w-full md:w-1/3">
                                     <label className="label">
                                         <span className="label-text">Amount</span>
                                     </label>
