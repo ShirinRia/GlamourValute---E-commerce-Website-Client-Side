@@ -35,7 +35,7 @@ const Updateproducts = () => {
                     icon: 'success',
                     confirmButtonText: 'Thank You'
                   })
-              
+              form.reset()
             }
             else{
                 Swal.fire({

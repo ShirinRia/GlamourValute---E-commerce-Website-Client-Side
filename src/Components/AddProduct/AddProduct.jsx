@@ -1,6 +1,8 @@
 import Swal from 'sweetalert2'
 
+
 const AddProduct = () => {
+  
     const handleaddproduct = e => {
         e.preventDefault();
         const form = e.target;
@@ -32,6 +34,7 @@ const AddProduct = () => {
                         icon: 'success',
                         confirmButtonText: 'OK'
                     })
+                    form.reset()
                 }
             })
 

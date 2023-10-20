@@ -4,7 +4,7 @@ import './Navbar.css'
 import { useContext } from "react";
 import { Authcontext } from '../../Provider/Provider';
 const Navbar = () => {
-    const { user, logout, uid,theme,settheme } = useContext(Authcontext)
+    const { user, logout, uid, theme, settheme } = useContext(Authcontext)
 
     // console.log(uid)
     const handlelogout = () => {
@@ -20,10 +20,10 @@ const Navbar = () => {
     }
     const handletheme = () => {
         // e.preventDeafault();
-       
-       settheme(!theme)
-       console.log(theme)
-        
+
+        settheme(!theme)
+        console.log(theme)
+
     }
     const links = <>
         <li className="mr-4"><NavLink to={'/'}>Home</NavLink></li>
@@ -71,12 +71,9 @@ const Navbar = () => {
                         : <Link to={'/login'} className="btn bg-[#e879f9] text-white hover:text-[#e879f9] hover:bg-white hover:outline hover:outline-offset-0 hover:outline-[#e879f9]"> Get Started </Link>
 
                     }
-                    {/* <form onSubmit={handletheme}>
-                        <input type="checkbox" name="theme" className="toggle ml-5" />
-                        
-                    </form> */}
+
                     <button onClick={handletheme} className="ml-5">
-                    <input type="checkbox" className="toggle"/>
+                        <input type="checkbox" className="toggle" />
                     </button>
 
                 </div>

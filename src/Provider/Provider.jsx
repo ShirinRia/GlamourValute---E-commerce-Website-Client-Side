@@ -11,7 +11,7 @@ const Provider = ({ children }) => {
     const [user, setuser] = useState(null)
     const [uid, setuid] = useState(null)
     const [loading, setloading] = useState(true)
-    const [theme, settheme] = useState(true)
+    const [theme, settheme] = useState(false)
 
     const createuser = (email, password) => {
         setloading(true)
