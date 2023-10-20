@@ -11,6 +11,7 @@ const Provider = ({ children }) => {
     const [user, setuser] = useState(null)
     const [uid, setuid] = useState(null)
     const [loading, setloading] = useState(true)
+    const [theme, settheme] = useState(true)
 
     const createuser = (email, password) => {
         setloading(true)
@@ -36,21 +37,21 @@ const Provider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
 
             if (currentuser) {
-                
+
                 const uid = currentuser.uid;
-               
+
                 setuser(currentuser)
-                console.log('user',uid)
+                console.log('user', uid)
                 setuid(currentuser.uid)
                 setloading(false)
-              } 
-              else {
+            }
+            else {
                 console.log("User is signed out")
                 setloading(false)
-              }
+            }
 
         });
-        
+
         return () => unsubscribe()
     }, [])
     const authinfo = {
@@ -60,7 +61,9 @@ const Provider = ({ children }) => {
         signin,
         signgoogle,
         loading,
-        uid
+        uid,
+        theme,
+        settheme,
     }
     return (
         <Authcontext.Provider value={authinfo}>

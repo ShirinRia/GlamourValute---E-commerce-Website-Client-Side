@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'; // ES6
 import { Link } from 'react-router-dom';
-
+import ReactStars from 'react-stars'
 const Product = ({ product }) => {
     const { _id, product_photo, product_description, product_rating, product_type, product_name, BrandName, product_price } = product
     return (
         <div>
-            <div className="card card-compact md:w-96 bg-base-100 border-b-2 border-red-500">
+            <div className="card shadow-md card-compact md:w-96 bg-base-100 border-b-2 border-red-500">
                 <figure><img src={product_photo} alt="Shoes" className="h-[300px] w-full" /></figure>
                 <div className="card-body">
                     <div className="flex justify-between">
@@ -19,12 +19,19 @@ const Product = ({ product }) => {
                     <div className="space-y-7 my-3 text-center">
                         <p className="text-center font-medium text-lg">BDT {product_price}</p>
                         <div className="rating gap-1 justify-center">
-                            <input type="radio" name={product_name} className="mask mask-heart bg-red-400" checked />
+                            {/* <input type="radio" name={product_name} className="mask mask-heart bg-red-400" checked />
                             <input type="radio" name={product_name} className="mask mask-heart bg-orange-400" />
                             <input type="radio" name={product_name} className="mask mask-heart bg-yellow-400" />
                             <input type="radio" name={product_name} className="mask mask-heart bg-lime-400" />
-                            <input type="radio" name={product_name} className="mask mask-heart bg-green-400" />
+                            <input type="radio" name={product_name} className="mask mask-heart bg-green-400" /> */}
+                            <ReactStars
+                                count={5}
+                                value={product_rating}
+                                size={36}
+                                edit={false}
+                                color2={'#f9a8d4'} />,
                         </div>
+
                     </div>
 
                     <div className="flex justify-center gap-x-5 px-5">

@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types'; // ES6
 import Brand from './Brand';
+import { useContext } from 'react';
+import { Authcontext } from '../../../Provider/Provider';
 
 const Ourbrands = ({ loadedbrands }) => {
-
+    const { theme} = useContext(Authcontext)
     return (
         <div className='max-w-6xl md:mx-auto mx-5'>
             <div className="border-t-2 border-b-2 border-base-500 mb-8 py-8">
-                <h3 className='text-3xl md:text-5xl font-bold text-center'>
+                <h3 className={`text-3xl md:text-5xl font-bold text-center ${theme ? "text-white" : ""}`} >
                     <span className='text-[#86198f]'>GlamourVault</span> EXCLUSIVE BRANDS
                 </h3>
             </div>

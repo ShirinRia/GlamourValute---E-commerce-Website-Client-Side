@@ -1,14 +1,15 @@
 import banner from '../../assets/bannerimage-.png'
-import {useEffect} from "react";
+import { useEffect} from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 const Banner = () => {
+    
    useEffect(() => {
         AOS.init();
       }, [])
     return (
         <div>
-            <div className="hero h-[80vh] bg-base-200">
+            <div className={`hero h-[80vh]  bg-base-200`}>
                 <div className="hero-content flex-col lg:flex-row-reverse justify-between h-full w-full ">
                     <div className=' h-full w-full md:w-1/2 text-right'>
                         <img src={banner} className="rounded-lg h-full w-full" />

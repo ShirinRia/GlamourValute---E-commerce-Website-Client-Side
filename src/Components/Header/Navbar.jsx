@@ -1,10 +1,10 @@
 import { NavLink, Link } from "react-router-dom";
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo-.png'
 import './Navbar.css'
 import { useContext } from "react";
 import { Authcontext } from '../../Provider/Provider';
 const Navbar = () => {
-    const { user, logout, uid } = useContext(Authcontext)
+    const { user, logout, uid,theme,settheme } = useContext(Authcontext)
 
     // console.log(uid)
     const handlelogout = () => {
@@ -17,6 +17,13 @@ const Navbar = () => {
                 console.log(error.message)
             });
 
+    }
+    const handletheme = () => {
+        // e.preventDeafault();
+       
+       settheme(!theme)
+       console.log(theme)
+        
     }
     const links = <>
         <li className="mr-4"><NavLink to={'/'}>Home</NavLink></li>
@@ -41,13 +48,13 @@ const Navbar = () => {
                     <img src={logo} alt="logo" className="h-20" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu-horizontal px-1">
+                    <ul className={`menu-horizontal px-1 ${theme ? "text-white" : ""}`}>
                         {links}
                     </ul>
                 </div>
                 <div className="md:navbar-end my-5 md:my-0">
                     {user ?
-                        <div className="flex items-center gap-3 ">
+                        <div className={`flex items-center gap-3 ${theme ? "text-white" : ""}`}>
                             <div className="flex gap-2 items-center border-2 border-base-200 px-3 py-1 rounded-lg mr-28 md:mr-0">
                                 <div className="w-10 rounded-full">
                                     <img src={user.photoURL} className="w-full h-full rounded-full" />
@@ -64,6 +71,14 @@ const Navbar = () => {
                         : <Link to={'/login'} className="btn bg-[#e879f9] text-white hover:text-[#e879f9] hover:bg-white hover:outline hover:outline-offset-0 hover:outline-[#e879f9]"> Get Started </Link>
 
                     }
+                    {/* <form onSubmit={handletheme}>
+                        <input type="checkbox" name="theme" className="toggle ml-5" />
+                        
+                    </form> */}
+                    <button onClick={handletheme} className="ml-5">
+                    <input type="checkbox" className="toggle"/>
+                    </button>
+
                 </div>
             </div>
         </div>
