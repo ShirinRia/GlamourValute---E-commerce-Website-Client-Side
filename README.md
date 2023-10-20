@@ -5,7 +5,7 @@ Welcome to GlamourValult, where beauty meets innovation, and confidence blossoms
 
 Currently, two official plugins are available:
 
-- You can add product of 6 brands
+- You can add product of 6 brands, without sign in you won't find this option
 - You can create advertise of products of 6 brands
 - You can update your product information
 - You can review any product
