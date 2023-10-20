@@ -13,7 +13,7 @@ const Productviews = () => {
     useEffect(() => {
         if (!products.length) {
             setisproductavailable(false)
-            console.log('no')
+            // console.log('no')
         }
         fetch(`http://localhost:5000/advertises/${brand}`)
             .then(res => res.json())
@@ -31,7 +31,7 @@ const Productviews = () => {
                 </Marquee>
             </div>
             {
-                isproductavailable ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-14 my-20 mx-5 md:mx-auto">
+                isproductavailable ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-10 my-20 mx-5 md:mx-auto">
                     {products.map(product => <Product key={product._id} product={product}></Product>)}
                 </div>
                     : <Productnotavailable></Productnotavailable>

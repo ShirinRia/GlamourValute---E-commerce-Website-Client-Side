@@ -9,8 +9,8 @@ const ProductDetails = () => {
     const productdetails = useLoaderData()
     const { user } = useContext(Authcontext)
     const cartitem = productdetails
-    // cartitem['UserUid'] = user.uid;
-    cartitem['_id'] = user.uid;
+    cartitem['UserUid'] = user.uid;
+    // cartitem['_id'] = user.uid;
     console.log(cartitem)
     const addtoCart = () => {
         fetch('http://localhost:5000/carts',
@@ -69,6 +69,7 @@ const ProductDetails = () => {
                         icon: 'success',
                         confirmButtonText: 'Congratulation'
                     })
+                    form.reset();
                 }
             })
 
@@ -79,7 +80,7 @@ const ProductDetails = () => {
         <div className="max-w-6xl mx-5 md:mx-auto  my-10">
             <div className="min-h-screen ">
                 <div className="flex flex-col lg:flex-row justify-between ">
-                    <img src={productdetails.product_photo} className="h-full rounded-lg" />
+                    <img src={productdetails.product_photo} className="h-[300px] w-[300px] rounded-lg" />
                     <div className="w-full md:w-1/2 space-y-7">
                         <h1 className={`text-7xl ${theme ? "text-white" : ""}`}>{productdetails.product_name}</h1>
                         <hr></hr>

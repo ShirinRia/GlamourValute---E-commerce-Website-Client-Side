@@ -4,6 +4,7 @@ import { BiError } from 'react-icons/bi';
 import { BiUnlink } from 'react-icons/bi';
 import { SiProgress } from 'react-icons/si';
 import { TypeAnimation } from 'react-type-animation';
+import { Link } from 'react-router-dom';
 
 const Errorpage = () => {
   return (
@@ -54,7 +55,7 @@ const Errorpage = () => {
 
           </div>
           <div className='text-center mt-8'>
-            <button className="btn w-full md:w-auto bg-red-700 border-none text-xl text-white font-medium">Back to Home</button>
+            <Link to={'/'} className="btn w-full md:w-auto bg-red-700 border-none text-xl text-white font-medium">Back to Home</Link>
           </div>
 
 
