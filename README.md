@@ -1,8 +1,12 @@
-# React + Vite
+# Cosmetics and Beauty :GlamourValult
+# live link : https://e-commerce-2e641.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to GlamourValult, where beauty meets innovation, and confidence blossoms.
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- You can add product of 6 brands
+- You can create advertise of products of 6 brands
+- You can update your product information
+- You can review any product
+- You can maintain a CART of your desired products.
