@@ -43,7 +43,7 @@ const Cart = ({ loadedcart, carts, setcarts }) => {
                     <div className="flex flex-col w-full md:w-2/3 space-y-3 md:py-5 ">
                         <h2 className="text-5xl md:text-2xl text-center md:text-left">{product_name}</h2>
                         <p className="text-3xl md:text-lg text-center md:text-left">{product_type}</p>
-                        <div className='flex justify-between'>
+                        <div className='flex flex-col  md:flex-row justify-between'>
                             <p className="text-3xl md:text-lg text-center md:text-left">TK {product_price}</p>
                             <p className=" italic font-bold text-xl text-center md:text-left">{BrandName}</p>
                         </div>

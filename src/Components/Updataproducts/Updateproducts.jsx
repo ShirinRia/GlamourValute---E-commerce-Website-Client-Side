@@ -17,7 +17,7 @@ const Updateproducts = () => {
         const newProduct = { product_name, BrandName, product_type, product_price, product_rating, product_description, product_photo, product_amount }
         console.log(newProduct);
         
-        fetch(`https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/${BrandName}/${_id}`,
+        fetch(`https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/products/${BrandName}/${_id}`,
         {
             method:'PUT',
             headers: {
@@ -45,10 +45,6 @@ const Updateproducts = () => {
                   })
             }
          })
-
-
-         
-
     }
 
     return (
@@ -131,13 +127,7 @@ const Updateproducts = () => {
 
                                 </div>
                             </div>
-                            {/* <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text">Product Description</span>
-                                </label>
-                                <textarea name="description" placeholder="Write your Product Description" defaultValue={product_description} className="textarea textarea-bordered textarea-lg w-full " ></textarea>
-
-                            </div> */}
+                            
                             {/* photo */}
                             <div className="form-control w-full">
                                 <label className="label">
