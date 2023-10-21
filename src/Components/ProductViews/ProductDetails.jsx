@@ -8,12 +8,16 @@ const ProductDetails = () => {
     const { theme} = useContext(Authcontext)
     const productdetails = useLoaderData()
     const { user } = useContext(Authcontext)
-    const cartitem = productdetails
+    // eslint-disable-next-line no-unused-vars
+    const { _id, ...cartdetails} = productdetails;
+    console.log(productdetails)
+    console.log(cartdetails)
+    const cartitem = cartdetails
     cartitem['UserUid'] = user.uid;
     // cartitem['_id'] = user.uid;
-    console.log(cartitem)
+    // console.log(cartitem)
     const addtoCart = () => {
-        fetch('http://localhost:5000/carts',
+        fetch('https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/carts',
             {
                 method: 'POST',
                 headers: {
@@ -51,7 +55,7 @@ const ProductDetails = () => {
         const review = form.review.value;
         console.log(userName, review)
         const newReview = { userName, review, productName }
-        fetch('http://localhost:5000/reviews',
+        fetch('https://cosmetics-beauty-backend-2d9gc5snl-shirin-sultanas-projects.vercel.app/reviews',
             {
                 method: 'POST',
                 headers: {

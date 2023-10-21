@@ -7,7 +7,7 @@ const ExtraSection1 = () => {
     const { theme} = useContext(Authcontext)
     const [reviews, setreviews] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setreviews(data))
     }, [])

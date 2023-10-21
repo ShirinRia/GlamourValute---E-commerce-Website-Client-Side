@@ -26,7 +26,7 @@ const Product = ({ product }) => {
                             <input type="radio" name={product_name} className="mask mask-heart bg-green-400" /> */}
                             <ReactStars
                                 count={5}
-                                value={product_rating}
+                                value={parseFloat(product_rating)}
                                 size={36}
                                 edit={false}
                                 color2={'#f9a8d4'} />,

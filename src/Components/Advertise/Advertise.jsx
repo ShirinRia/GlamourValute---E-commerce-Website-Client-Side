@@ -11,7 +11,7 @@ const Advertise = () => {
 
         const newadvertise = { BrandName, product_photo }
         console.log(newadvertise);
-        fetch('http://localhost:5000/advertises',
+        fetch('https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/advertises',
             {
                 method: 'POST',
                 headers: {

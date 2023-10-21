@@ -27,7 +27,7 @@ const Login = () => {
                     email,
                     lastloggedat: currentuser?.metadata?.lastSignInTime
                 }
-                fetch('http://localhost:5000/users',
+                fetch('https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/users',
                     {
                         method: 'PATCH',
                         headers: {
@@ -80,7 +80,7 @@ const Login = () => {
                     email,
                     lastloggedat: user?.metadata?.lastSignInTime
                 }
-                fetch('http://localhost:5000/users',
+                fetch('https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/users',
                     {
                         method: 'PATCH',
                         headers: {

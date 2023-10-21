@@ -48,22 +48,22 @@ const Routes = createBrowserRouter([
       {
         path: "/mycart/:uid",
         element: <PrivateRoute><Mycart></Mycart></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/carts/${params.uid}`)
+        loader: ({ params }) => fetch(`https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/carts/${params.uid}`)
       },
       {
         path: "/updateproduct/:brand/:id",
         element: <PrivateRoute><Updateproducts></Updateproducts></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.brand}/${params.id}`)
+        loader: ({ params }) => fetch(`https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/products/${params.brand}/${params.id}`)
       },
       {
         path: "/viewbrand/:brand",
         element: <Productviews></Productviews>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.brand}`)
+        loader: ({ params }) => fetch(`https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/products/${params.brand}`)
       },
       {
         path: "/productdetails/:brand/:id",
         element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.brand}/${params.id}`)
+        loader: ({ params }) => fetch(`https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/products/${params.brand}/${params.id}`)
       },
     ],
   },

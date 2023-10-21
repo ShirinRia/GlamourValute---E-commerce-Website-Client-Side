@@ -16,7 +16,7 @@ const AddProduct = () => {
         const product_amount = form.amount.value;
         const newProduct = { product_name, BrandName, product_type, product_price, product_rating, product_description, product_photo, product_amount }
         console.log(newProduct);
-        fetch('http://localhost:5000/products',
+        fetch('https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/products',
             {
                 method: 'POST',
                 headers: {

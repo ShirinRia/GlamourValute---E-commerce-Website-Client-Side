@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 
 const Updateproducts = () => {
     const loadedproducts = useLoaderData()
-    const  { _id,product_photo, product_rating, product_type, product_name, BrandName, product_price, product_amount } =loadedproducts
+    const  { _id,product_photo, product_rating, product_type, product_name, BrandName, product_price,product_description,product_amount } =loadedproducts
     const handleupdateproduct = e => {
         e.preventDefault();
         const form = e.target;
@@ -12,13 +12,12 @@ const Updateproducts = () => {
         const product_type = form.pro_type.value;
         const product_price = form.price.value;
         const product_rating = form.rating.value;
-        const product_description = form.description.value;
         const product_photo = form.photo.value;
         const product_amount = form.amount.value;
         const newProduct = { product_name, BrandName, product_type, product_price, product_rating, product_description, product_photo, product_amount }
         console.log(newProduct);
         
-        fetch(`http://localhost:5000/products/${BrandName}/${_id}`,
+        fetch(`https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/${BrandName}/${_id}`,
         {
             method:'PUT',
             headers: {
@@ -46,6 +45,9 @@ const Updateproducts = () => {
                   })
             }
          })
+
+
+         
 
     }
 
