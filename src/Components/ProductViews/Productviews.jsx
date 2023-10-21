@@ -15,7 +15,7 @@ const Productviews = () => {
             setisproductavailable(false)
             // console.log('no')
         }
-        fetch(`https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/${brand}`)
+        fetch(`https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/advertises/${brand}`)
             .then(res => res.json())
             .then(data => setadvertiselist(data))
     }, [brand,products.length])
