@@ -14,6 +14,7 @@ import Mycart from "../Components/Mycart/Mycart";
 import Advertise from "../Components/Advertise/Advertise";
 import Errorpage from "../Components/Errorpage/Errorpage";
 import Updateproducts from "../Components/Updataproducts/Updateproducts";
+import Payment from "../Components/Payment/Payment";
 
 
 const Routes = createBrowserRouter([
@@ -63,6 +64,11 @@ const Routes = createBrowserRouter([
       {
         path: "/productdetails/:brand/:id",
         element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/products/${params.brand}/${params.id}`)
+      },
+      {
+        path: "/payment/:id",
+        element: <PrivateRoute><Payment/></PrivateRoute>,
         loader: ({ params }) => fetch(`https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/products/${params.brand}/${params.id}`)
       },
     ],

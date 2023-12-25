@@ -1,10 +1,28 @@
 import { RiDeleteBin6Fill } from 'react-icons/ri';
 import Swal from 'sweetalert2'
+import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import PropTypes from 'prop-types'; // ES6
+import { useNavigation } from 'react-router-dom';
 const Cart = ({ loadedcart, carts, setcarts }) => {
+    const navigate=useNavigation()
     const { _id, product_photo, product_type, product_name, BrandName, product_price } = loadedcart
     console.log(typeof (setcarts))
     const cartDelete = (id_) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                navigate(`/payment/${_id}`)
+            }
+        })
+    }
+    const checkout = (id_) => {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -31,7 +49,6 @@ const Cart = ({ loadedcart, carts, setcarts }) => {
                             )
                         }
                     })
-
             }
         })
     }
@@ -53,9 +70,10 @@ const Cart = ({ loadedcart, carts, setcarts }) => {
                 <div className='border-r-2 border-gray-400 my-5 pl-2'></div>
                 <div className="p-5">
 
-                    <div className='flex justify-center items-center'>
+                    <div className='flex flex-col gap-4 justify-center items-center'>
 
                         <button onClick={() => cartDelete(_id)}><RiDeleteBin6Fill className='text-7xl md:text-5xl' /></button>
+                        <button onClick={() => checkout(_id)}><MdOutlineShoppingCartCheckout className='text-7xl md:text-5xl' /></button>
                     </div>
 
                 </div>

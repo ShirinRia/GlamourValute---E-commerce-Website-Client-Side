@@ -18,7 +18,7 @@ const Productviews = () => {
         fetch(`https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/advertises/${brand}`)
             .then(res => res.json())
             .then(data => setadvertiselist(data))
-    }, [brand,products.length])
+    }, [brand, products.length])
     return (
         <div className="max-w-6xl mx-auto">
             <div >

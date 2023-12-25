@@ -3,8 +3,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { Authcontext } from '../../Provider/Provider';
 import { useContext} from "react";
+import axios from "axios";
 import { FcGoogle } from 'react-icons/fc';
-
+// const axios = require('axios');
 const Login = () => {
     // const [logerror, setlogerror] = useState('')
     const { signin, signgoogle } = useContext(Authcontext)
@@ -47,7 +48,17 @@ const Login = () => {
                             })
                         }
                     })
-                navigate(location?.state ? location.state : '/')
+                    // get access token
+                    const loggedinuser={email}
+                    axios.post('https://cosmetics-beauty-backend-mimjpskj0-shirin-sultanas-projects.vercel.app/jwt', loggedinuser)
+                      .then(function (response) {
+                        console.log(response);
+                      })
+                      .catch(function (error) {
+                        console.log(error);
+                      });
+                // navigate(location?.state ? location.state : '/')
+
 
 
             })
